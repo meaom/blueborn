@@ -6,6 +6,11 @@ export default function HomePage() {
       <Head>
         <title>Blue Born Official</title>
         <meta name="description" content="Blue Born Jewelry Website" />
+
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lustria&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <div
@@ -42,7 +47,7 @@ export default function HomePage() {
               SIGN UP
             </button>
             <button className="px-6 py-2 bg-white bg-opacity-20 border border-white text-black rounded-full hover:bg-opacity-40">
-              SIGN IN
+              LOGIN
             </button>
           </div>
         </div>

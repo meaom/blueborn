@@ -1,10 +1,10 @@
 import Head from 'next/head';
 
-export default function LoginPage() {
+export default function SignUpPage() {
     return (
         <>
             <Head>
-                <title>Login | Blue Born Official</title>
+                <title>Sign Up | Blue Born Official</title>
                 <meta name="description" content="Blue Born Jewelry Website" />
 
                 <link
@@ -29,17 +29,30 @@ export default function LoginPage() {
 
                 {/* ข้อความต้อนรับ */}
                 <p className="text-lg font- text-gray-800 leading-snug mb-6" style={{ fontFamily: 'Lustria, serif' }} >
-                    Welcome back, Blue Fam!<br />
-                    Login and Keep on<br />
-                    Protect our <span className="bg-blue-900 text-white px-2 py-0.5 ">Big Blue!</span>
+                    join to be blue<br />
+                    for our <span className="bg-blue-900 text-white px-2 py-0.5 ">Blue Ocean</span>
                 </p>
 
                 {/* ฟอร์ม Email / Password */}
                 <form className="space-y-4 text-left" style={{ fontFamily: 'Lustria, serif' }}>
                     <div>
+                    <label className="block text-sm text-gray-700 mb-1">Full Name</label>
+                    <input
+                        type="text"
+                        className="w-full px-4 py-2 border-2 border-blue-900/30 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-900/70"
+                    />
+                    </div>
+                    <div>
                     <label className="block text-sm text-gray-700 mb-1">Email Address</label>
                     <input
                         type="email"
+                        className="w-full px-4 py-2 border-2 border-blue-900/30 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-900/70"
+                    />
+                    </div>
+                    <div>
+                    <label className="block text-sm text-gray-700 mb-1">Tel.</label>
+                    <input
+                        type="tel"
                         className="w-full px-4 py-2 border-2 border-blue-900/30 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-900/70"
                     />
                     </div>
@@ -50,7 +63,19 @@ export default function LoginPage() {
                         className="w-full px-4 py-2 border-2 border-blue-900/30 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-900/70"
                     />
                     </div>
-                    
+                    <div>
+                    <label className="block text-sm text-gray-700 mb-1">Confirm Password</label>
+                    <input
+                        type="password"
+                        className="w-full px-4 py-2 border-2 border-blue-900/30 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-900/70"
+                    />
+                    </div>
+                    <button
+                        type="submit"
+                        className="w-full py-2 mt-4 bg-blue-900/70 rounded-full text-white hover:bg-blue-900"
+                    >
+                        Sign Up
+                    </button>
                 </form>
                 </div>
             </div>
