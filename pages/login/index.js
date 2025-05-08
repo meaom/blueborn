@@ -7,13 +7,19 @@ import { useRouter } from 'next/router';
 export default function LoginPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   
-  const handleLogin = async () => {
+  
+  const handleLogin = async (e) => {
+    e.preventDefault(); // Prevent default form submission
     setLoading(true);
+
     try {
-      const response = await axios.post('https://localhost:8000/users/api/toekn/', {
-        username: 'your_username',
-        password: 'your_password',
+      const response = await axios.post('http://127.0.0.1:8000/users/token/', {
+        username: username, // Replace with your username field
+        password: password, // Replace with your password field
       });
     
       const {access, refresh} = response.data;
@@ -22,10 +28,13 @@ export default function LoginPage() {
       router.push('/'); // Redirect to home page after successful login
 
     } catch (error) {
-      console.error("Login failed:", error);
-    }finally{
-      setLoading(false);
+      console.error("Login failed:", error.response ? error.response.data : error.message);
+      setError(error.response?.data?.detail || "An unexpected error occurred.");
+  }
+    finally {
+      setLoading(false);  // Reset loading state
     }
+
   };
 
   return (
@@ -48,6 +57,8 @@ export default function LoginPage() {
             width={240}
             height={240}
             className="mx-auto absolute -top-5 left-1/2 transform -translate-x-1/2"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           />
 
           {/* ข้อความต้อนรับ */}
@@ -76,6 +87,8 @@ export default function LoginPage() {
               </label>
               <input
                 type="email"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 className="w-full px-4 py-2 border-2 border-blue-900/30 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-900/70"
               />
             </div>
@@ -85,8 +98,12 @@ export default function LoginPage() {
               </label>
               <input
                 type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="w-full px-4 py-2 border-2 border-blue-900/30 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-900/70"
               />
+              {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+
             </div>
           </form>
 
