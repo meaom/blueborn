@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 
+
 export default function HomePage() {
   return (
     <>
@@ -43,7 +44,6 @@ export default function HomePage() {
             width={700}
             height={700}
             className="w-[700px] max-w-[70%]"
-
           />
 
           {/* ปุ่มสมัคร/เข้าสู่ระบบ */}
@@ -56,9 +56,9 @@ export default function HomePage() {
             </button>
             <button 
               className="px-6 py-2 bg-white bg-opacity-20 border border-white text-black rounded-full cursor-pointer"
-              onClick={() => window.location.href = '/signin'}
+              onClick={() => window.location.href = '/login'}
             >
-              SIGN IN
+              Login
             </button>
           </div>
         </div>
