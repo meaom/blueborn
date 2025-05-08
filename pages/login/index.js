@@ -11,7 +11,6 @@ export default function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   
-  
   const handleLogin = async (e) => {
     e.preventDefault(); // Prevent default form submission
     setLoading(true);
@@ -22,7 +21,7 @@ export default function LoginPage() {
         password: password, // Replace with your password field
       });
     
-      const {access, refresh} = response.data;
+      const { access, refresh } = response.data;
       localStorage.setItem('access', access);
       localStorage.setItem('refresh', refresh);
       router.push('/'); // Redirect to home page after successful login
@@ -30,11 +29,9 @@ export default function LoginPage() {
     } catch (error) {
       console.error("Login failed:", error.response ? error.response.data : error.message);
       setError(error.response?.data?.detail || "An unexpected error occurred.");
-  }
-    finally {
+    } finally {
       setLoading(false);  // Reset loading state
     }
-
   };
 
   return (
@@ -57,8 +54,6 @@ export default function LoginPage() {
             width={240}
             height={240}
             className="mx-auto absolute -top-5 left-1/2 transform -translate-x-1/2"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
           />
 
           {/* ข้อความต้อนรับ */}
@@ -90,6 +85,7 @@ export default function LoginPage() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className="w-full px-4 py-2 border-2 border-blue-900/30 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-900/70"
+                placeholder="Enter your email"
               />
             </div>
             <div>
@@ -101,18 +97,18 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full px-4 py-2 border-2 border-blue-900/30 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-900/70"
+                placeholder="Enter your password"
               />
               {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
-
             </div>
           </form>
 
+          {/* ปุ่ม Login */}
           <button
             className="mt-5 px-6 py-2 bg-white bg-opacity-20 border border-white text-black rounded-full cursor-pointer"
             onClick={handleLogin}
             disabled={loading}
           >
-    
             {loading ? 'Loading...' : 'SIGN IN'}
           </button>
         </div>
