@@ -67,15 +67,17 @@ export default function CatalogPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     {filtered.map((product, index) => (
                         <div key={index}>
-                            <div className="aspect-square bg-gray-100 overflow-hidden rounded shadow">
-                                <Image
-                                    src={product.image}
-                                    alt={product.name}
-                                    width={600}
-                                    height={600}
-                                    className="object-cover w-full h-full"
-                                />
-                            </div>
+                            <Link href={`/product-detail?name=${encodeURIComponent(product.name)}`}>
+                                <div className="aspect-square bg-gray-100 overflow-hidden rounded shadow cursor-pointer hover:opacity-90 transition">
+                                    <Image
+                                        src={product.image}
+                                        alt={product.name}
+                                        width={600}
+                                        height={600}
+                                        className="object-cover w-full h-full"
+                                    />
+                                </div>
+                            </Link>
                             <div className="mt-4">
                                 <h3 className="text-lg font-medium">{product.name}</h3>
                                 <p className="text-sm text-gray-700">{product.price}</p>
