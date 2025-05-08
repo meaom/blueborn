@@ -1,12 +1,14 @@
-// pages/_document.js
+// src/pages/_document.js
 import { Html, Head, Main, NextScript } from 'next/document';
 
-export default function Document() {
+export default function MyDocument() {
   return (
-    <Html>
+    <Html lang="en">
       <Head>
-        {/* เพิ่ม favicon ตรงนี้ */}
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lustria&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <body>
         <Main />

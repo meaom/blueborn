@@ -1,5 +1,5 @@
 import Head from 'next/head';
-
+import Image from 'next/image';
 export default function SignUpPage() {
     return (
         <>
@@ -7,10 +7,7 @@ export default function SignUpPage() {
                 <title>Sign Up | Blue Born Official</title>
                 <meta name="description" content="Blue Born Jewelry Website" />
 
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Lustria&display=swap"
-                    rel="stylesheet"
-                />
+
             </Head>
 
             <div
@@ -21,14 +18,16 @@ export default function SignUpPage() {
                 <div className="relative bg-white/70 rounded-3xl px-10 pt-20 pb-10 w-full max-w-md text-center shadow-lg">
                 
                 {/* โลโก้ล้นออกด้านบน */}
-                <img
+                <Image
                     src="/blueborn-logo.png"
                     alt="Blue Born Logo"
-                    className="w-60 mx-auto absolute -top-16 left-1/2 transform -translate-x-1/2"
+                    width={240} 
+                    height={240}
+                    className="mx-auto absolute -top-5 left-1/2 transform -translate-x-1/2"
                 />
 
                 {/* ข้อความต้อนรับ */}
-                <p className="text-lg font- text-gray-800 leading-snug mb-6" style={{ fontFamily: 'Lustria, serif' }} >
+                <p className="mt-16 text-lg font- text-gray-800 leading-snug mb-6" style={{ fontFamily: 'Lustria, serif' }} >
                     join to be blue<br />
                     for our <span className="bg-blue-900 text-white px-2 py-0.5 ">Blue Ocean</span>
                 </p>
