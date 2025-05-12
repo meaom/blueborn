@@ -1,7 +1,7 @@
 import React from 'react';
 import SideBar from '../../components/SideBar';
 
-export default function AdminDashboard() {
+export default function Products() {
     return (
         <div className="flex min-h-screen bg-gray-100 text-gray-800">
             {/* Sidebar */}
@@ -9,9 +9,9 @@ export default function AdminDashboard() {
             {/* Main Content */}
             <main className="flex-1 p-8">
                 <header className="flex justify-between items-center mb-8">
-                    <h2 className="text-3xl font-bold">Dashboard</h2>
+                    <h2 className="text-3xl font-bold">Products</h2>
                     <div className="relative">
-                        <input type="text" placeholder="Search order" className="pl-4 pr-4 py-2 rounded-md border border-gray-300 w-42" />
+                        <input type="text" placeholder="Search product" className="pl-4 pr-4 py-2 rounded-md border border-gray-300 w-42" />
                     </div>
                 </header>
 

@@ -22,10 +22,7 @@ export default function CatalogPage() {
             <Head>
                 <title>Catalog | Blue Born Official</title>
                 <meta name="description" content="Blue Born Jewelry Website" />
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Lustria&display=swap"
-                    rel="stylesheet"
-                />
+              
             </Head>
 
             <div className="min-h-screen bg-white font-[Lustria] text-center px-6 py-10">
@@ -34,14 +31,14 @@ export default function CatalogPage() {
                 <div className="flex justify-between items-center mb-8">
                     {/* ซ้าย: โลโก้ */}
                     <div className="flex-1 flex justify-start">
-                        <img
+                        <Image
                             src="/mini-logo.jpg"
                             alt="Blue Born Logo"
+                            width={80}
+                            height={80}
                             className="w-20"
                         />
                     </div>
-
-                    {/* กลาง: ช่องค้นหา */}
                     <div className="flex-1 flex justify-center">
                         <input
                             type="text"

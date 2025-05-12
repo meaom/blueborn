@@ -4,8 +4,8 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between py-4 px-4 md:px-8 bg-white shadow-md"> 
-        
+    <nav className="flex items-center justify-between py-4 px-4 md:px-8 bg-white shadow-md">
+      {/* Logo */}
       <Link href="/" className="text-2xl font-serif font-bold">
         <Image
           src="/mini-logo-black.png"
@@ -22,7 +22,7 @@ const Navbar = () => {
         <button className="p-1">
           <ShoppingCart className="h-5 w-5" color="black" />
         </button>
-        <button className="p-1">
+        <button className="p-">
           <Heart className="h-5 w-5" color="black" />
         </button>
       </div>

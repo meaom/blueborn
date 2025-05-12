@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 
 
 export default function HomePage() {
@@ -22,18 +23,15 @@ export default function HomePage() {
             height={75}
             alt="Mini Logo"
           />
-          <a href="#" className="drop-shadow-lg">CUSTOMER</a><br></br>
-          <a href="#" className="drop-shadow-lg"> SERVICES</a><br></br>
-          <a href="#" className="drop-shadow-lg"> CONTACT US</a>
         </div>
 
         {/* เมนูด้านขวาบน */}
         <div className="absolute top-6 right-6 text-black text-xs space-x-2 tracking-wider">
-          <a href='#'>HOUSE OF BLUE @ BLUEBORN </a> / <br></br>
-          <a href='#'>VIEW CATALOGUE</a> / 
-          <a href='#'>ABOUT US</a>/ <br></br> 
-          <a href='#'>RING SIZE</a> / 
-          <a href='#'> HOW TO MASSURE</a>
+          <Link href='/' className="hover:underline">HOUSE OF BLUE @ BLUEBORN </Link> / <br></br>
+          <Link href='catalog' className="hover:underline">VIEW CATALOGUE</Link> / 
+          <Link href='about' className="hover:underline">ABOUT US</Link>/ <br></br> 
+          <Link href='ring-size' className="hover:underline">RING SIZE</Link> / 
+          <Link href='how-to-measure' className="hover:underline"> HOW TO MEASURE</Link>
         </div>
 
         {/* โลโก้ตรงกลาง */}
@@ -52,7 +50,7 @@ export default function HomePage() {
               className="px-6 py-2 bg-white bg-opacity-20 border border-white text-black rounded-full cursor-pointer"
               onClick={() => window.location.href = '/signup'}
             >
-              SIGN UP
+              Sign Up
             </button>
             <button 
               className="px-6 py-2 bg-white bg-opacity-20 border border-white text-black rounded-full cursor-pointer"
